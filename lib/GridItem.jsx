@@ -2,7 +2,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
-import { DraggableCore } from "react-draggable";
+import { DraggableCore } from "@metservice/react-draggable";
 import { Resizable } from "react-resizable";
 import { perc, setTopLeft, setTransform } from "./utils";
 import classNames from "classnames";
@@ -366,6 +366,7 @@ export default class GridItem extends React.Component<Props, State> {
   mixinDraggable(child: ReactElement<any>): ReactElement<any> {
     return (
       <DraggableCore
+        scale={this.props.transformScale}
         onStart={this.onDragStart}
         onDrag={this.onDrag}
         onStop={this.onDragStop}
